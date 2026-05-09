@@ -14,7 +14,8 @@ from bot.client import (
 )
 
 
-def test_reraise_timestamp_sync_message() -> None:
+def test_reraise_timestamp_sync_message(mocker) -> None:
+    mocker.patch("binance.client.Client.ping")
     cli = BinanceFuturesClient(api_key="k", api_secret="s")
     resp = MagicMock()
     body = '{"code": -1021, "msg": "Timestamp outside recv window"}'
@@ -27,7 +28,8 @@ def test_reraise_timestamp_sync_message() -> None:
     assert CLOCK_SYNC_MESSAGE in str(err.value)
 
 
-def test_reraise_generic_binance_maps_to_trading_bot_error() -> None:
+def test_reraise_generic_binance_maps_to_trading_bot_error(mocker) -> None:
+    mocker.patch("binance.client.Client.ping")
     cli = BinanceFuturesClient(api_key="k", api_secret="s")
     resp = MagicMock()
     body = '{"code": -4140, "msg": "Precision error"}'
