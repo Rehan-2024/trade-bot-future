@@ -1,0 +1,32 @@
+[project]
+name = "trading-bot"
+version = "0.1.0"
+description = "Binance USDT-M Futures Testnet CLI"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["bot", "."]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+packages = ["bot"]
+strict = false
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+implicit_reexport = false
+
+[[tool.mypy.overrides]]
+module = "binance.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v"

@@ -1,0 +1,8 @@
+# Sample excerpt: BTCUSDT MARKET BUY (testnet) — copied from logs/trading_bot.log
+# Redact any line containing signature= or API keys if you paste raw HTTP logs.
+
+2026-05-09 17:51:55,618 DEBUG urllib3.connectionpool — https://testnet.binancefuture.com:443 "GET /fapi/v1/exchangeInfo HTTP/1.1" 200 None
+2026-05-09 17:51:55,632 DEBUG bot.orders — place_market_order params (sanitized): {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001'}
+2026-05-09 17:51:55,754 DEBUG urllib3.connectionpool — https://testnet.binancefuture.com:443 "POST /fapi/v1/order HTTP/1.1" 200 None
+2026-05-09 17:51:55,755 DEBUG bot.client — futures_create_order response keys: ['orderId', 'symbol', 'status', 'clientOrderId', 'price', 'avgPrice', 'origQty', 'executedQty', 'cumQty', 'cumQuote', 'timeInForce', 'type', 'reduceOnly', 'closePosition', 'side', 'positionSide', 'stopPrice', 'workingType', 'priceProtect', 'origType', 'priceMatch', 'selfTradePreventionMode', 'goodTillDate', 'updateTime']
+2026-05-09 17:51:55,755 DEBUG bot.orders — Mapped order snapshot: symbol=BTCUSDT side=BUY status=NEW orderId=13123640688

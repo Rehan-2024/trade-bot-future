@@ -1,0 +1,8 @@
+# Sample excerpt: ETHUSDT LIMIT SELL (testnet) — copied from logs/trading_bot.log
+# Redact any line containing signature= or API keys if you paste raw HTTP logs.
+
+2026-05-09 17:52:35,312 DEBUG urllib3.connectionpool — https://testnet.binancefuture.com:443 "GET /fapi/v1/exchangeInfo HTTP/1.1" 200 None
+2026-05-09 17:52:35,328 DEBUG bot.orders — place_limit_order params (sanitized): {'symbol': 'ETHUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'quantity': '0.01', 'price': '3500'}
+2026-05-09 17:52:35,470 DEBUG urllib3.connectionpool — https://testnet.binancefuture.com:443 "POST /fapi/v1/order HTTP/1.1" 200 None
+2026-05-09 17:52:35,471 DEBUG bot.client — futures_create_order response keys: ['orderId', 'symbol', 'status', 'clientOrderId', 'price', 'avgPrice', 'origQty', 'executedQty', 'cumQty', 'cumQuote', 'timeInForce', 'type', 'reduceOnly', 'closePosition', 'side', 'positionSide', 'stopPrice', 'workingType', 'priceProtect', 'origType', 'priceMatch', 'selfTradePreventionMode', 'goodTillDate', 'updateTime']
+2026-05-09 17:52:35,471 DEBUG bot.orders — Mapped order snapshot: symbol=ETHUSDT side=SELL status=NEW orderId=8693506927
